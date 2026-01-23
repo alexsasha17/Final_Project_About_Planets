@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0b0f2b;
+  color: #ffffff;
+}
+
+header {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0e1338;
+  border-bottom: 1px solid #1d235a;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 26px;
+  color: #7f8cff;
+}
+
+.search-input {
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: #151a44;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.search-input::placeholder {
+  color: #9aa0ff;
+}
+
+main {
+  padding: 40px;
+}
+
+main h2 {
+  font-size: 16px;
+  font-weight: normal;
+  color: #cfd3ff;
+  max-width: 900px;
+  margin-bottom: 40px;
+}
+
+main h2 a {
+  color: #7f8cff;
+  text-decoration: none;
+}
+
+main h2 a:hover {
+  text-decoration: underline;
+}
+
+.planets-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.planet-card {
+  background-color: #151a44;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.planet-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.planet-card h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #7f8cff;
+  font-size: 20px;
+}
+
+.planet-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 10px rgba(127, 140, 255, 0.3));
+}
+
+.planet-card p {
+  font-size: 14px;
+  color: #cfd3ff;
+  line-height: 1.5;
+}
+
+.planet-card a {
+  color: #7f8cff;
+  text-decoration: none;
+}
+
+.planet-card a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #0e1338;
+  color: #9aa0ff;
+  font-size: 13px;
+  border-top: 1px solid #1d235a;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  main {
+    padding: 20px;
+  }
+}
