@@ -1,23 +1,41 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+}
+
+body.dark-theme {
   background-color: #0b0f2b;
   color: #ffffff;
 }
 
-header {
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #0e1338;
-  border-bottom: 1px solid #1d235a;
+body.light-theme {
+  background-color: #f4f6ff;
+  color: #0e1338;
 }
 
-header h1 {
+.header-wrapper {
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid;
+}
+
+body.dark-theme .header-wrapper {
+  background-color: #0e1338;
+  border-color: #1d235a;
+}
+
+body.light-theme .header-wrapper {
+  background-color: #ffffff;
+  border-color: #d6dcff;
+}
+
+.web-name {
   margin: 0;
   font-size: 26px;
   color: #7f8cff;
+  flex: 1;
 }
 
 .search-input {
@@ -25,33 +43,75 @@ header h1 {
   border-radius: 20px;
   border: none;
   outline: none;
+  font-size: 14px;
+  min-width: 180px;
+}
+
+body.dark-theme .search-input {
   background-color: #151a44;
   color: #ffffff;
-  font-size: 14px;
+}
+
+body.light-theme .search-input {
+  background-color: #e9ecff;
+  color: #0e1338;
 }
 
 .search-input::placeholder {
   color: #9aa0ff;
 }
 
-main {
+.change-theme {
+  border: none;
+  border-radius: 14px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+body.dark-theme .change-theme {
+  background: #151a44;
+}
+
+body.light-theme .change-theme {
+  background: #e9ecff;
+}
+
+.change-theme:hover {
+  transform: scale(1.08);
+}
+
+.change-theme img {
+  width: 20px;
+  height: 20px;
+}
+
+.main-container {
   padding: 40px;
 }
 
-main h2 {
+.main-header {
   font-size: 16px;
   font-weight: normal;
-  color: #cfd3ff;
   max-width: 900px;
   margin-bottom: 40px;
+  line-height: 1.6;
 }
 
-main h2 a {
+body.dark-theme .main-header {
+  color: #cfd3ff;
+}
+
+body.light-theme .main-header {
+  color: #2a2f55;
+}
+
+.main-header a {
   color: #7f8cff;
   text-decoration: none;
 }
 
-main h2 a:hover {
+.main-header a:hover {
   text-decoration: underline;
 }
 
@@ -62,21 +122,35 @@ main h2 a:hover {
 }
 
 .planet-card {
-  background-color: #151a44;
   padding: 20px;
   border-radius: 20px;
   text-align: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.planet-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+body.dark-theme .planet-card {
+  background-color: #151a44;
 }
 
-.planet-card h3 {
-  margin-top: 0;
-  margin-bottom: 15px;
+body.light-theme .planet-card {
+  background-color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.planet-card:hover {
+  transform: translateY(-6px);
+}
+
+body.dark-theme .planet-card:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+body.light-theme .planet-card:hover {
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+.planet-name {
+  margin: 0 0 15px;
   color: #7f8cff;
   font-size: 20px;
 }
@@ -86,40 +160,68 @@ main h2 a:hover {
   height: 120px;
   object-fit: contain;
   margin-bottom: 15px;
+}
+
+body.dark-theme .planet-card img {
   filter: drop-shadow(0 0 10px rgba(127, 140, 255, 0.3));
 }
 
-.planet-card p {
+.main-paragraph {
   font-size: 14px;
-  color: #cfd3ff;
   line-height: 1.5;
 }
 
-.planet-card a {
+body.dark-theme .main-paragraph {
+  color: #cfd3ff;
+}
+
+body.light-theme .main-paragraph {
+  color: #2a2f55;
+}
+
+.main-paragraph a {
   color: #7f8cff;
   text-decoration: none;
 }
 
-.planet-card a:hover {
+.main-paragraph a:hover {
   text-decoration: underline;
 }
 
 footer {
   padding: 20px;
   text-align: center;
+  font-size: 13px;
+  border-top: 1px solid;
+}
+
+body.dark-theme footer {
   background-color: #0e1338;
   color: #9aa0ff;
-  font-size: 13px;
-  border-top: 1px solid #1d235a;
+  border-color: #1d235a;
+}
+
+body.light-theme footer {
+  background-color: #ffffff;
+  color: #5a6299;
+  border-color: #d6dcff;
+}
+
+.footer-text {
+  margin: 0;
 }
 
 @media (max-width: 600px) {
-  header {
+  .header-wrapper {
     flex-direction: column;
-    gap: 15px;
+    align-items: stretch;
   }
 
-  main {
+  .search-input {
+    width: 100%;
+  }
+
+  .main-container {
     padding: 20px;
   }
 }
